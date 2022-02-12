@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "BZDC8fsNc9NGw3HTm7xmevixd4kE+iLUQFSv8c8QWlb6XkmOI9BTx2hlyibksvkD/+axMSOLe2uLITF3B0YD1Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nunes\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\nunes\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\nunes\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\nunes\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\nunes\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\nunes\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
