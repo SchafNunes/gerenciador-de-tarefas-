@@ -13,6 +13,9 @@ namespace gerenciador_de_tarefas_.Controllers
   [Route("api/[controller]")]
   public class LoginController : ControllerBase
   {
+
+    private readonly string loginTeste = "teste@teste.com";
+    private readonly string senhaTeste = "1234";
     private readonly ILogger<LoginController> _logger;
 
     public LoginController(ILogger<LoginController> logger)
@@ -25,7 +28,10 @@ namespace gerenciador_de_tarefas_.Controllers
     {
       try
       {
-        if (requisicao == null || requisicao.Login == null || requisicao.Senha == null)
+        if (requisicao == null || requisicao.Login == null || requisicao.Senha == null
+        || string.IsNullOrEmpty(requisicao.Login) || string.IsNullOrWhiteSpace(requisicao.Login)
+        || string.IsNullOrEmpty(requisicao.Senha) || string.IsNullOrWhiteSpace(requisicao.Senha)
+        || requisicao.Login != loginTeste || requisicao.Senha != senhaTeste)
         {
           return BadRequest(new ErroRespostaDto()
         {
@@ -33,7 +39,11 @@ namespace gerenciador_de_tarefas_.Controllers
           Erro = "Parametros de entrada Inválidos"
         });
         }
-        return Ok("Usuário autenticado com sucesso");
+        return Ok(new LoginRetornoDto() {
+          Email = loginTeste,
+          Nome = "Usuário de Teste",
+          Token = ""
+        });
       }
       catch (Exception execao)
       {
