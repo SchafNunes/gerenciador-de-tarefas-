@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using gerenciador_de_tarefas_.Dtos;
+using gerenciador_de_tarefas_.Models;
 using Microsoft.AspNetCore.Http;
+using gerenciador_de_tarefas_.Services;
 
 namespace gerenciador_de_tarefas_.Controllers
 {
@@ -39,11 +41,21 @@ namespace gerenciador_de_tarefas_.Controllers
           Erro = "Parametros de entrada Inválidos"
         });
         }
-        return Ok(new LoginRetornoDto() {
+        var usuarioTeste = new Usuario()
+        {
+          Id = 1,
+          Nome = "Usuário de Testes",
           Email = loginTeste,
-          Nome = "Usuário de Teste",
-          Token = ""
-        });
+          Senha = senhaTeste,
+        };
+
+         var token = TokenService.CriarToken(usuarioTeste);
+
+        return Ok(new LoginRetornoDto() {
+          Email = usuarioTeste.Email,
+          Nome = usuarioTeste.Nome,
+          Token = token
+        }); 
       }
       catch (Exception execao)
       {
