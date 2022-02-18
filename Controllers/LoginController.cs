@@ -28,7 +28,7 @@ namespace gerenciador_de_tarefas_.Controllers
     }
 
     [HttpPost]
-    // [AllowAnonymous] 
+    [AllowAnonymous]    
     public IActionResult EfetuarLogin([FromBody] LoginRequisicaoDto requisicao)
     {
       try

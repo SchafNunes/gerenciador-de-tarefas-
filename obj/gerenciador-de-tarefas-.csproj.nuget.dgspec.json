@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nunes\\Documents\\c#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj": {}
+    "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nunes\\Documents\\c#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj": {
+    "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nunes\\Documents\\c#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
+        "projectUniqueName": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
         "projectName": "gerenciador-de-tarefas-",
-        "projectPath": "C:\\Users\\nunes\\Documents\\c#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
+        "projectPath": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
         "packagesPath": "C:\\Users\\nunes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nunes\\Documents\\c#\\gerenciador-de-tarefas-\\obj\\",
+        "outputPath": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nunes\\AppData\\Roaming\\NuGet\\NuGet.Config"
