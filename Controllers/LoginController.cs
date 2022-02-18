@@ -2,18 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using gerenciador_de_tarefas_.Controllers;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using gerenciador_de_tarefas_.Dtos;
 using gerenciador_de_tarefas_.Models;
 using Microsoft.AspNetCore.Http;
 using gerenciador_de_tarefas_.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace gerenciador_de_tarefas_.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
-  public class LoginController : ControllerBase
+  public class LoginController : BaseController
   {
 
     private readonly string loginTeste = "teste@teste.com";
@@ -26,6 +28,7 @@ namespace gerenciador_de_tarefas_.Controllers
     }
 
     [HttpPost]
+    // [AllowAnonymous] 
     public IActionResult EfetuarLogin([FromBody] LoginRequisicaoDto requisicao)
     {
       try
