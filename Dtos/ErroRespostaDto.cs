@@ -9,6 +9,9 @@ namespace gerenciador_de_tarefas_.Dtos
   {
     public int Status { get; set; }
     public string Erro { get; set; }
+    public List<string> Erros { get; set; }
+
+
   }
 }
 
