@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = gerenciador_de_tarefas_
-build_property.ProjectDir = C:\Users\nunes\Documents\C#\gerenciador-de-tarefas-\
+build_property.ProjectDir = c:\Users\nunes\Documents\C#\gerenciador-de-tarefas-\

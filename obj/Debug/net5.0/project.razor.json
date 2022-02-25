@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
+  "FilePath": "c:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\GerenciadorDeTarefas.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15616,7 +15616,7 @@
     ],
     "CSharpLanguageVersion": 900
   },
-  "RootNamespace": "gerenciador_de_tarefas_",
+  "RootNamespace": "GerenciadorDeTarefas",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

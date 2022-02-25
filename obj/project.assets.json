@@ -6150,11 +6150,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
-      "projectName": "gerenciador-de-tarefas-",
-      "projectPath": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
+      "projectUniqueName": "C:\\Users\\nunes\\Downloads\\gdt\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\GerenciadorDeTarefas\\GerenciadorDeTarefas\\GerenciadorDeTarefas.csproj",
+      "projectName": "GerenciadorDeTarefas",
+      "projectPath": "C:\\Users\\nunes\\Downloads\\gdt\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\GerenciadorDeTarefas\\GerenciadorDeTarefas\\GerenciadorDeTarefas.csproj",
       "packagesPath": "C:\\Users\\nunes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\obj\\",
+      "outputPath": "C:\\Users\\nunes\\Downloads\\gdt\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\GerenciadorDeTarefas\\GerenciadorDeTarefas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nunes\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,23 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using GerenciadorDeTarefas.Models;
+using GerenciadorDeTarefas.Repository;
+using GerenciadorDeTarefas.Repository.Impl;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using gerenciador_de_tarefas_.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace gerenciador_de_tarefas_
+namespace GerenciadorDeTarefas
 {
     public class Startup
     {
@@ -36,46 +38,51 @@ namespace gerenciador_de_tarefas_
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "gerenciador_de_tarefas_", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GerenciadorDeTarefas", Version = "v1" });
             });
 
             var chaveCriptografiaEmBytes = Encoding.ASCII.GetBytes(ChaveJWT.ChaveSecreta);
-            services.AddAuthentication(autenticacao => {
+            services.AddAuthentication(autenticacao =>
+            {
                 autenticacao.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 autenticacao.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(autenticacao => {
+            }).AddJwtBearer(autenticacao =>
+            {
                 autenticacao.RequireHttpsMetadata = false;
                 autenticacao.SaveToken = true;
-                autenticacao.TokenValidationParameters = new TokenValidationParameters {
+                autenticacao.TokenValidationParameters = new TokenValidationParameters
+                {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(chaveCriptografiaEmBytes),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
             });
+
             services.AddCors();
+
+            services.AddScoped<IUsuarioRepository, UsuarioRepositoryImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        { 
+        {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "gerenciador_de_tarefas_ v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GerenciadorDeTarefas v1"));
             }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseCors(cors => 
+            app.UseCors(cors =>
                 cors.AllowAnyOrigin()
                 .AllowAnyMethod()
-                .AllowAnyHeader()
-            );
-            
+                .AllowAnyHeader());
+
             app.UseAuthentication();
             app.UseAuthorization();
 

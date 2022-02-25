@@ -1,10 +1,10 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace gerenciador_de_tarefas_.Models
+namespace GerenciadorDeTarefas.Models
 {
     public class GerenciadorDeTarefasContext : DbContext
     {

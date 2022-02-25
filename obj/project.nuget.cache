@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P4aSXPpHJ4SULC88aWCUtzWPjn9Bfs/ba7gqejVAYLAJsmSGK8c/yJ+OKD50Df3pLQj3S/NEG5s5FMPQoEMPuA==",
+  "dgSpecHash": "qfmUyfaaCzlQSpWOBjsfvnzx/nDyVeyTrOGxbGG5eh7dq67TBzHiNK4YT0WQyuLqF2lKQCko5BmQpyhfaILrBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nunes\\Documents\\C#\\gerenciador-de-tarefas-\\gerenciador-de-tarefas-.csproj",
+  "projectFilePath": "C:\\Users\\nunes\\Downloads\\gdt\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\gerenciador-tarefas-c-sharp-9bb564efbb0ec165a5413f04e5bb5c329b9ed2dd\\GerenciadorDeTarefas\\GerenciadorDeTarefas\\GerenciadorDeTarefas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nunes\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nunes\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

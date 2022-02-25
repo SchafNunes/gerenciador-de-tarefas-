@@ -1,74 +1,73 @@
+﻿using GerenciadorDeTarefas.Dtos;
+using GerenciadorDeTarefas.Models;
+using GerenciadorDeTarefas.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using gerenciador_de_tarefas_.Controllers;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
-using gerenciador_de_tarefas_.Dtos;
-using gerenciador_de_tarefas_.Models;
-using Microsoft.AspNetCore.Http;
-using gerenciador_de_tarefas_.Services;
-using Microsoft.AspNetCore.Authorization;
 
-namespace gerenciador_de_tarefas_.Controllers
+namespace GerenciadorDeTarefas.Controllers
 {
-  [ApiController]
-  [Route("api/[controller]")]
-  public class LoginController : BaseController
-  {
-
-    private readonly string loginTeste = "teste@teste.com";
-    private readonly string senhaTeste = "1234";
-    private readonly ILogger<LoginController> _logger;
-
-    public LoginController(ILogger<LoginController> logger)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class LoginController : BaseController
     {
-      _logger = logger;
-    }
+        private readonly ILogger<LoginController> _logger;
 
-    [HttpPost]
-    [AllowAnonymous]    
-    public IActionResult EfetuarLogin([FromBody] LoginRequisicaoDto requisicao)
-    {
-      try
-      {
-        if (requisicao == null || requisicao.Login == null || requisicao.Senha == null
-        || string.IsNullOrEmpty(requisicao.Login) || string.IsNullOrWhiteSpace(requisicao.Login)
-        || string.IsNullOrEmpty(requisicao.Senha) || string.IsNullOrWhiteSpace(requisicao.Senha)
-        || requisicao.Login != loginTeste || requisicao.Senha != senhaTeste)
+        private readonly string loginTeste = "admin@admin.com";
+        private readonly string senhaTeste = "Admin1234@";
+
+        public LoginController(ILogger<LoginController> logger)
         {
-          return BadRequest(new ErroRespostaDto()
-        {
-          Status = StatusCodes.Status400BadRequest,
-          Erro = "Parametros de entrada Inválidos"
-        });
+            _logger = logger;
         }
-        var usuarioTeste = new Usuario()
-        {
-          Id = 1,
-          Nome = "Usuário de Testes",
-          Email = loginTeste,
-          Senha = senhaTeste,
-        };
 
-         var token = TokenService.CriarToken(usuarioTeste);
-
-        return Ok(new LoginRetornoDto() {
-          Email = usuarioTeste.Email,
-          Nome = usuarioTeste.Nome,
-          Token = token
-        }); 
-      }
-      catch (Exception execao)
-      {
-        _logger.LogError($"ocorreu erro ao efetuar login {execao.Message}", execao);
-        return StatusCode(StatusCodes.Status500InternalServerError, new ErroRespostaDto()
+        [HttpPost]
+        [AllowAnonymous]
+        public IActionResult EfetuarLogin([FromBody] LoginRequisicaoDto requisicao)
         {
-          Status = StatusCodes.Status500InternalServerError,
-          Erro = "Ocorreu erro ao efetuar login, Tente novamente!"
-        });
-      }
+            try
+            {
+                if (requisicao == null
+                    || string.IsNullOrEmpty(requisicao.Login) || string.IsNullOrWhiteSpace(requisicao.Login)
+                    || string.IsNullOrEmpty(requisicao.Senha) || string.IsNullOrWhiteSpace(requisicao.Senha)
+                    || requisicao.Login != loginTeste || requisicao.Senha != senhaTeste)
+                {
+                    return BadRequest(new ErroRespotaDto()
+                    {
+                        Status = StatusCodes.Status400BadRequest,
+                        Erro = "Parâmetros de entrada inválidos"
+                    });
+                }
+
+                var usuarioTeste = new Usuario()
+                {
+                    Id = 1,
+                    Nome = "Usuário de Teste",
+                    Email = loginTeste,
+                    Senha = senhaTeste
+                };
+
+                var token = TokenService.CriarToken(usuarioTeste);
+
+                return Ok(new LoginRespostaDto() { 
+                    Email = usuarioTeste.Email,
+                    Nome = usuarioTeste.Nome,
+                    Token = token
+                });
+            }
+            catch(Exception excecao)
+            {
+                _logger.LogError($"Ocorreu erro ao efetuar login: {excecao.Message}", excecao);
+                return StatusCode(StatusCodes.Status500InternalServerError, new ErroRespotaDto() { 
+                    Status = StatusCodes.Status500InternalServerError,
+                    Erro = "Ocorreu erro ao efetuar login, tente novamente!"
+                });
+            }
+        }
     }
-  }
 }
